@@ -3,6 +3,7 @@ import locale
 locale.setlocale(locale.LC_ALL, 'C')
 from PIL import Image
 import decode
+import time
 
 def seach_line_data(size, flag = False):
     '''
@@ -83,23 +84,21 @@ def data_update(initial_list):
     '''
     while True:
         message = input('输入几排几列更新后的数据，空格隔开:\n如修改第一排第二列数字为5  输入：1 2 5)')
-        # try:
-        message_ls = message.split(' ')
-        print(message_ls)
-        initial_list[int(message_ls[0]) - 1][int(message_ls[1] )- 1] = -int(message_ls[2])
-        print('更新成功')
-        # except:
-        #     print('输入错误')
+        try:
+            message_ls = message.split(' ')
+            print(message_ls)
+            initial_list[int(message_ls[0]) - 1][int(message_ls[1] )- 1] = -int(message_ls[2])
+            print('更新成功')
+        except:
+            print('输入错误')
         flag = input('是否继续修改，Y/N')
         if flag in ['N', 'n']:
             return initial_list
 
 if __name__ == '__main__':
     img = Image.open("demo.png")
-    # img = cut_img()
-    # initial_list = img_block(img)
-    initial_list = [[-4, 0, 0, 0, 0, -9, 0, 0, -6], [-5, 0, 0, 0, 0, 0, -4, 0, 0], [0, 0, 0, -7, -1, 0, 0, 0, 0], [0, -7, 0, -8, 0, -3, 0, 0, -9], [-6, 0, -8, 0, -4, 0, 0, -3, 0], [0, -4, 0, -9, 0, -6, 0, 0, -5], [0, 0, 0, -2, -6, 0, 0, 0, 0], [-7, 0, 0, 0, 0, 0, -3, 0, 0], [-2, 0, 0, 0, 0, -8, 0, 0, -1]]
-    print(initial_list)
+    img = cut_img()
+    initial_list = img_block(img)
     print('识别结果为：')
     decode.show(initial_list)
     pass_update = input('是否需要修改数据Y/N')
@@ -109,6 +108,8 @@ if __name__ == '__main__':
         decode.show(initial_list)
     print('参考结果为：')
     decode.start(initial_list)
+    time.sleep(99999)
+
 
 
 
