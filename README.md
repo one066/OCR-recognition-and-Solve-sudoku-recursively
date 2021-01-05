@@ -6,6 +6,5 @@
 - 运行num_recognition.py即可
 
 ### 截图
-- 1、识别结果
-![](https://github.com/missheo/OCR-recognition-and-Solve-sudoku-recursively/blob/main/empty.png)
-- 2、参考结果
+- 1、识别结果 empty.png
+- 2、参考结果 result.png
