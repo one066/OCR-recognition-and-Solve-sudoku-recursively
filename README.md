@@ -9,3 +9,4 @@
 - 1、识别结果 empty.png
 ![image](https://github.com/missheo/OCR-recognition-and-Solve-sudoku-recursively/blob/main/empty.png)
 - 2、参考结果 result.png
+![image](https://github.com/missheo/OCR-recognition-and-Solve-sudoku-recursively/blob/main/result.png)
